@@ -6,6 +6,7 @@ interface ListProps {
   food: string;
   price: number;
 }
+
 export const HomePage = () => {
   const OrderGun: ListProps[] = [
     { food: '土魠魚羹-黃麵', price: 80 },
