@@ -10,7 +10,7 @@ export const TableItem = ({ food, price }: TableItemProps) => {
         <Card>
             <CardBody>
                 <Text>{food}</Text>
-                <Text>{price}</Text>
+                <Text>NT${price}</Text>
             </CardBody>
         </Card>
     )
