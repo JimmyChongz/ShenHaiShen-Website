@@ -14,10 +14,6 @@ export const useRouter = () => {
     {
       path: '/history',
       element: <Transaction_History />,
-    },
-    {
-
-    },
-
+    }
   ]);
 }
