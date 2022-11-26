@@ -35,8 +35,5 @@ export const Transaction_History = () => {
             </Accordion>
         </>
     )
-
-
-
 }
 
