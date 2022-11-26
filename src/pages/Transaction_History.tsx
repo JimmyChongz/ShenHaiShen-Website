@@ -1,7 +1,6 @@
 import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box } from "@chakra-ui/react";
 import React from "react";
 export const Transaction_History = () => {
-
     return (
         <>
             <Accordion>
