@@ -1,6 +1,8 @@
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Box, Stack, color, Img, Image } from "@chakra-ui/react";
 import { NavBar } from "../components/NavBar"
-import { List } from "../components/Table"
+import { MealList } from "../components/Table"
+import 'react-slideshow-image/dist/styles.css'
+import { Slide } from 'react-slideshow-image';
 
 interface ListProps {
   food: string;
@@ -36,10 +38,43 @@ export const HomePage = () => {
     { food: '米粉', price: 10 },
     { food: '漁村炒飯', price: 60 },
   ]
+  const slideImages = [
+    {
+      url: 'https://topeat.tw/images/main03.webp',
+      caption: 'Slide 1'
+    },
+    {
+      url: 'https://topeat.tw/images/main01.webp',
+      caption: 'Slide 2'
+    },
+    {
+      url: 'https://topeat.tw/images/main02.webp',
+      caption: 'Slide 3'
+    },
+  ];
 
+  const Slideshow = () => {
+    return (
+      <div className="slide-container">
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="each-slide" key={index}>
+              <div style={{ backgroundImage: `url(${slideImage.url})`, height: 750, backgroundSize: "cover" }} > {/*切換到手機版會很醜qq*/}
+              </div>
+            </div>
+          ))}
+        </Slide>
+      </div>
+    )
+  }
   return (
     <>
-      <div><NavBar /></div>
+      <div>
+        <NavBar />
+      </div>
+      <Box>
+        <Slideshow />
+      </Box>
       <Tabs variant='enclosed'>
         <TabList>
           <Tab>焿類</Tab>
@@ -48,13 +83,13 @@ export const HomePage = () => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <div><List Order={OrderGun} /></div>
+            <div><MealList Order={OrderGun} /></div>
           </TabPanel>
           <TabPanel>
-            <div><List Order={OrderCurry} /></div>
+            <div><MealList Order={OrderCurry} /></div>
           </TabPanel>
           <TabPanel>
-            <div><List Order={OrderOther} /></div>
+            <div><MealList Order={OrderOther} /></div>
           </TabPanel>
         </TabPanels>
       </Tabs>

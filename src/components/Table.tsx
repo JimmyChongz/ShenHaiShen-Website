@@ -10,7 +10,7 @@ interface ListProps {
     Order: tableProps[]
 }
 
-export const List = ({ Order }: ListProps) => {
+export const MealList = ({ Order }: ListProps) => {
     return (
         <>
             {
