@@ -7,7 +7,6 @@ interface TableItemProps {
 
 export const TableItem = ({ food, price }: TableItemProps) => {
     const toast = useToast();
-    const [total, setTotal] = useState<number>(0);
     return (
         <>
             <Card>
@@ -27,7 +26,6 @@ export const TableItem = ({ food, price }: TableItemProps) => {
                                         duration: 9000,
                                         isClosable: true,
                                     })
-                                    setTotal(total + 1)
                                 }}
                             >
                                 加入購物車
