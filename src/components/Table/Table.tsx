@@ -1,5 +1,5 @@
 import { Card } from "@chakra-ui/react"
-import { TableItem } from "../components/TableItem"
+import { TableItem } from "./TableItem"
 
 interface tableProps {
     food: string,

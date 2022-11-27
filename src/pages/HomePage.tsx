@@ -1,6 +1,6 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel, Box, Stack, color, Img, Image } from "@chakra-ui/react";
 import { NavBar } from "../components/NavBar"
-import { MealList } from "../components/Table"
+import { MealList } from "../components/Table/Table"
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
 
@@ -40,16 +40,16 @@ export const HomePage = () => {
   ]
   const slideImages = [
     {
-      url: 'https://topeat.tw/images/main03.webp',
-      caption: 'Slide 1'
-    },
-    {
       url: 'https://topeat.tw/images/main01.webp',
-      caption: 'Slide 2'
     },
     {
       url: 'https://topeat.tw/images/main02.webp',
-      caption: 'Slide 3'
+    },
+    {
+      url: 'https://topeat.tw/images/main03.webp',
+    },
+    {
+      url: 'https://topeat.tw/images/main04.webp',
     },
   ];
 
@@ -69,9 +69,7 @@ export const HomePage = () => {
   }
   return (
     <>
-      <div>
-        <NavBar />
-      </div>
+      <NavBar />
       <Box>
         <Slideshow />
       </Box>
