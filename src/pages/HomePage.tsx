@@ -3,6 +3,7 @@ import { NavBar } from "../components/NavBar"
 import { MealList } from "../components/Table/Table"
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
+import { Introduction } from "../components/Introduction";
 
 interface ListProps {
   food: string;
@@ -73,6 +74,7 @@ export const HomePage = () => {
       <Box>
         <Slideshow />
       </Box>
+      <Introduction />
       <Tabs variant='enclosed'>
         <TabList>
           <Tab>焿類</Tab>
