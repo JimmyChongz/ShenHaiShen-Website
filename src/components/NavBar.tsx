@@ -33,7 +33,7 @@ export const NavBar = () => {
       <div
         className="p-5 shadow-lg"
         style={{
-          backgroundImage: `url(https://topeat.tw/images/bg-header.webp)`,
+          backgroundImage: `url()https://topeat.tw/images/bg-header.webp`,
         }}
       >
         <div className="flex justify-between">
@@ -59,14 +59,14 @@ export const NavBar = () => {
             color="white"
             px={4}
             h={10}
-            onClick={() => {}}
+            onClick={() => { }}
           >
             結帳
           </Box>
         </div>
       </div>
       <ChakraProvider>
-        <Drawer isOpen={isOpen} placement="left" onClose={() => {}}>
+        <Drawer isOpen={isOpen} placement="left" onClose={() => { }}>
           <DrawerOverlay />
           <DrawerContent backgroundImage="https://topeat.tw/images/bg-bottom.webp">
             <DrawerCloseButton
@@ -94,19 +94,19 @@ export const NavBar = () => {
 
             <DrawerFooter>
               <ButtonGroup variant="outline" spacing="6">
-                <Button 
-                borderRadius="md"
-                color="black"
-                px={4}
-                h={10}
+                <Button
+                  borderRadius="md"
+                  color="black"
+                  px={4}
+                  h={10}
                 >取消</Button>
                 <Button
-                bg='pink' 
-                borderRadius="md"
-                color="black"
-                px={4}
-                h={10}
-                onClick={() => {
+                  bg='pink'
+                  borderRadius="md"
+                  color="black"
+                  px={4}
+                  h={10}
+                  onClick={() => {
                     setOpen(false);
                     setAlert(true);
                   }}
@@ -115,7 +115,7 @@ export const NavBar = () => {
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
-        <Modal isOpen={isAlert} onClose={() => {}}>
+        <Modal isOpen={isAlert} onClose={() => { }}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>確定要登出嗎?</ModalHeader>
