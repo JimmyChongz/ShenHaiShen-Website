@@ -47,7 +47,7 @@ export const NavBar = () => {
                     <img
                         className="h-12 rounded cursor-pointer"
                         onClick={() => {
-                            navigate(`/`);
+                            navigate(`/Home`);
                         }}
                         src="https://topeat.tw/images/logo.webp"
                         alt="Logo"

@@ -20,10 +20,5 @@ export const useRouter = () => {
       path: '/Login',
       element: <LoginPage />,
     },
-    {
-      path: '/',
-      element: <HomePage />,
-    }
-
   ]);
 }
