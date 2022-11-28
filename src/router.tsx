@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import { CheckoutPage } from "./pages/CheckoutPage";
 import { Transaction_History } from "./pages/Transaction_History";
 
 
@@ -19,6 +20,10 @@ export const useRouter = () => {
     {
       path: '/Login',
       element: <LoginPage />,
+    },
+    {
+      path:'/CheckoutPage',
+      element:<CheckoutPage/>
     },
   ]);
 }
