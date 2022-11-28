@@ -1,5 +1,5 @@
 import { Card } from "@chakra-ui/react"
-import { TableItem } from "../components/TableItem"
+import { TableItem } from "./TableItem"
 
 interface tableProps {
     food: string,
@@ -10,7 +10,7 @@ interface ListProps {
     Order: tableProps[]
 }
 
-export const List = ({ Order }: ListProps) => {
+export const MealList = ({ Order }: ListProps) => {
     return (
         <>
             {
