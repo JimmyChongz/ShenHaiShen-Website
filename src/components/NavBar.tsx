@@ -52,17 +52,18 @@ export const NavBar = () => {
                         src="https://topeat.tw/images/logo.webp"
                         alt="Logo"
                     />
-                    <Box
-                        as="button"
+                    <Button
                         borderRadius="md"
-                        bg="tomato"
-                        color="white"
+                        bg="pink"
+                        color="black"
                         px={4}
                         h={10}
-                        onClick={() => { }}
+                        onClick={() => {
+                            navigate(`/Login`)
+                        }}
                     >
-                        結帳
-                    </Box>
+                        登入
+                    </Button>
                 </div>
             </div>
             <ChakraProvider>
