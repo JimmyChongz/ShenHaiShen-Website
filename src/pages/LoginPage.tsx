@@ -65,7 +65,7 @@ export default function Login() {
                                 忘記密碼？
                             </a>
                             <div className="mt-6">
-                                <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-pink-300 rounded-md hover:bg-pink-400 focus:outline-none focus:bg-purple-600" onClick={() => { nevigate(`/`) }}>
+                                <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-pink-300 rounded-md hover:bg-pink-400 focus:outline-none focus:bg-purple-600" onClick={() => { nevigate(`/Home`) }}>
                                     登入
                                 </button>
                             </div>

@@ -9,7 +9,7 @@ import { Transaction_History } from "./pages/Transaction_History";
 export const useRouter = () => {
   return createBrowserRouter([
     {
-      path: '/',
+      path: '/Home',
       element: <HomePage />,
     },
     {
@@ -20,10 +20,5 @@ export const useRouter = () => {
       path: '/Login',
       element: <LoginPage />,
     },
-    {
-      path: '/',
-      element: <HomePage />,
-    }
-
   ]);
 }
