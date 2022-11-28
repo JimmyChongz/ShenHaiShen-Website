@@ -3,12 +3,16 @@ import {
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import { CheckoutPage } from "./pages/CheckoutPage";
+import { MenuPage } from "./pages/MenuPage";
 import { Transaction_History } from "./pages/Transaction_History";
-
+import { CheckoutPage } from "./pages/CheckoutPage";
 
 export const useRouter = () => {
   return createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage />,
+    },
     {
       path: '/Home',
       element: <HomePage />,
@@ -22,8 +26,12 @@ export const useRouter = () => {
       element: <LoginPage />,
     },
     {
-      path:'/CheckoutPage',
-      element:<CheckoutPage/>
+      path: '/Menu',
+      element: <MenuPage />,
+    },
+    {
+      path:'/chackout',
+      element:<CheckoutPage/>,
     },
   ]);
 }
