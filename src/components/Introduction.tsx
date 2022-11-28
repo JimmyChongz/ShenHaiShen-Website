@@ -3,7 +3,7 @@ import { SimpleGrid, Card, CardHeader, Heading, CardBody, CardFooter, Button, Te
 export const Introduction = () => {
     return (
         <>
-            <div className="pt-16 pb-16 pr-12 pl-12">
+            <div className="pt-16 pb-16 pr-12 pl-12" style={{ backgroundImage: `url(https://topeat.tw/images/bg-bottom.webp)` }}>
                 <div className="text-4xl text-center pb-16">嚴選食材，吃得安心</div>
                 <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
                     <Card backgroundColor='#E2D6C8'>
