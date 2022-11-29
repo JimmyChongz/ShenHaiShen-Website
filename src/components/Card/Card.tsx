@@ -20,19 +20,19 @@ export const Cards = ({ cards }: cardsProps) => {
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
       >
-        <Card backgroundColor={bgc}>
-          {cards.map((card) => {
-            return (
-              <>
+        {cards.map((card) => {
+          return (
+            <>
+              <Card backgroundColor={bgc}>
                 <CardsContent
                   title={card.title}
                   message={card.message}
                   src={card.src}
                 ></CardsContent>
-              </>
-            );
-          })}
-        </Card>
+              </Card>
+            </>
+          );
+        })}
       </SimpleGrid>
     </>
   );
