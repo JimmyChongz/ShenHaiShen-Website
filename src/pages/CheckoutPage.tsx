@@ -38,7 +38,7 @@ export const CheckoutPage = () => {
                     <Text fontSize='4xl'>確認訂單</Text>
                     <div><MealList Order={Orderlist} /></div>{/* 暫時這樣用 */}
 
-                    <Button colorScheme='blue' onClick={()=>{
+                    <Button colorScheme='blue' onClick={() => {
                         setChackCompleted(false);
                         setPayCompleted(true);
                         setStep(33);
@@ -49,42 +49,43 @@ export const CheckoutPage = () => {
 
                 {Paycompleted && <div>
                     <Text fontSize='4xl'>付款方式</Text>
-                    <Menu>
-                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                            付款方式
-                        </MenuButton>
-                        <MenuList>
-                            <MenuItem>貨到付款</MenuItem>
-                            <MenuItem>載具付款</MenuItem>
-                            <MenuItem>信用卡付款</MenuItem>
-                        </MenuList>
-                    </Menu>
+                    <Text fontSize='2x1'>付款方式:
+                        <Menu>
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                                付款方式
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem>貨到付款</MenuItem>
+                                <MenuItem>載具付款</MenuItem>
+                                <MenuItem>信用卡付款</MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Text>
+
                     <br />
-                    <Button colorScheme='blue' onClick={()=>{
+                    <Button className=" left-2 " colorScheme='blue' onClick={() => {
                         setChackCompleted(true);
                         setPayCompleted(false);
                         setStep(0);
                     }}>上一頁</Button>
-                    <br />
-                    <Button colorScheme='blue' onClick={()=>{
+                    <Button className=" left-4 " colorScheme='blue' onClick={() => {
                         setPayCompleted(false);
                         setOutCompleted(true);
                         setStep(66);
                     }}>確認完成</Button>
-                    
+
                 </div>}
 
                 {Outcompleted && <div>
                     <Text fontSize='4xl'>完成訂單</Text>
 
                     <br />
-                    <Button colorScheme='blue' onClick={()=>{
+                    <Button className=" left-2 " colorScheme='blue' onClick={() => {
                         setOutCompleted(false);
                         setPayCompleted(true);
                         setStep(33);
                     }}>上一頁</Button>
-                    <br />
-                    <Button colorScheme='blue' onClick={()=>{
+                    <Button className=" left-4 " colorScheme='blue' onClick={() => {
                         navigate('/History')
                     }}>確認完成</Button>
                 </div>}
