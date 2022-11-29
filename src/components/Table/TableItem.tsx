@@ -1,4 +1,5 @@
-import { Box, Card, CardBody, Img, Text, useToast } from "@chakra-ui/react"
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { Box, Card, CardBody, IconButton, Img, Text, useToast } from "@chakra-ui/react"
 import { useState } from "react";
 interface TableItemProps {
     food: string,
@@ -17,7 +18,18 @@ export const TableItem = ({ food, price }: TableItemProps) => {
                             <Text>NT${price}</Text>
                         </div>
                         <div>
-                            <Box as='button' borderRadius='md' bg='tomato' color='white' px={4} h={10}
+                            <IconButton aria-label='Add to friends' icon={<MinusIcon />}
+                                onClick={() => {
+                                    toast({
+                                        title: '已移出商品至購物車',
+                                        description: "We've del your meals to shop car.",
+                                        status: 'error',
+                                        duration: 9000,
+                                        isClosable: true,
+                                    })
+                                }}
+                            />
+                            <IconButton aria-label='Add to friends' icon={<AddIcon />}
                                 onClick={() => {
                                     toast({
                                         title: '已新增商品至購物車',
@@ -27,9 +39,7 @@ export const TableItem = ({ food, price }: TableItemProps) => {
                                         isClosable: true,
                                     })
                                 }}
-                            >
-                                加入購物車
-                            </Box>
+                            />
                         </div>
                     </div>
                 </CardBody>
