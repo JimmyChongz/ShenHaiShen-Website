@@ -5,7 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import { MenuPage } from "./pages/MenuPage";
 import { Transaction_History } from "./pages/Transaction_History";
-
+import { CheckoutPage } from "./pages/CheckoutPage";
 
 export const useRouter = () => {
   return createBrowserRouter([
@@ -28,6 +28,10 @@ export const useRouter = () => {
     {
       path: '/Menu',
       element: <MenuPage />,
+    },
+    {
+      path:'/chackout',
+      element:<CheckoutPage/>,
     },
   ]);
 }

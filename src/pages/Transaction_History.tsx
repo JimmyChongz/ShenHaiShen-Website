@@ -21,8 +21,12 @@ export const Transaction_History = () => {
 
     return (
         <>
-            <div><NavBar /></div>
-            <NoticeBoard notices={notices} />
+            <div className=" text-lg " style={{ backgroundImage: `url(https://topeat.tw/images/bg-bottom.webp)`, height: 700, backgroundSize: 'cover' }} >
+                <div><NavBar /></div>
+                <NoticeBoard notices={notices} />
+            </div>
+
+
         </>
     )
 }
