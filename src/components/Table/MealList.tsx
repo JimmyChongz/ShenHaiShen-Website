@@ -1,5 +1,5 @@
-import { Card, SimpleGrid } from "@chakra-ui/react";
-import { TableItem } from "./TableItem";
+import { SimpleGrid } from "@chakra-ui/react";
+import { TableItem } from "./MealListItem";
 
 interface tableProps {
   food: string;
