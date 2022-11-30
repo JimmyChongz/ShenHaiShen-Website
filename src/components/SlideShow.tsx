@@ -24,7 +24,7 @@ export const SlideShow = () => {
                 {SlideImages.map((slideImage) => (
                     <div className="each-slide">
                         <div>
-                            <Box bgImage={slideImage.url} bgRepeat='no-repeat' style={{ height: 700 }} />
+                            <Box bgImage={slideImage.url} bgRepeat='no-repeat' style={{ height: 750 }} bgSize='contain' bgPosition='center' />
                         </div>
                     </div>
                 ))}
