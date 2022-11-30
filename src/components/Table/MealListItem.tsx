@@ -1,31 +1,22 @@
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  CardHeader,
-  Divider,
   Heading,
   Stack,
   Text,
   useToast,
   Image,
   Box,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { Staple } from "../Staple";
+
 interface TableItemProps {
   food: string;
   price: number;
   src: string;
   message: string;
-}
-
+};
 export const TableItem = ({ food, price, src, message }: TableItemProps) => {
   const toast = useToast();
   return (
@@ -34,7 +25,6 @@ export const TableItem = ({ food, price, src, message }: TableItemProps) => {
         <CardBody>
           <Image
             src={src}
-            alt="Green double couch with wooden legs"
             borderRadius="lg"
           />
           <Stack mt="4" spacing="2">
@@ -43,7 +33,6 @@ export const TableItem = ({ food, price, src, message }: TableItemProps) => {
             <Text color="blue.600" fontSize="2xl">
               NT${price}
             </Text>
-            if()
           </Stack>
         </CardBody>
         <CardFooter>
@@ -69,5 +58,5 @@ export const TableItem = ({ food, price, src, message }: TableItemProps) => {
         </CardFooter>
       </Card>
     </>
-  );
+  )
 };
