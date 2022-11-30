@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Button, Menu, MenuButton, MenuItem, MenuList, Progress, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import { Button, Menu, MenuButton, MenuItem, MenuList, Progress, Select, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../components/NavBar"
@@ -13,7 +13,7 @@ interface ListProps {
 
 export const CheckoutPage = () => {
     const [step, setStep] = useState<number>(0);
-    const [money, setmoney] = useState<number>(0);
+    const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
     const [Checkcompleted, setCheckCompleted] = useState<boolean>(true);
     const [Paycompleted, setPayCompleted] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const CheckoutPage = () => {
         { food: '土魠魚羹', price: 70 },
         { food: '燒肉羹-黃麵', price: 80 },
     ]
-
+    const [Payment, setPayment] = useState<string>('');
 
     return (
         <>
@@ -47,35 +47,50 @@ export const CheckoutPage = () => {
 
                 {Paycompleted && <div>
                     <Text fontSize='4xl'>付款方式</Text>
-                    <Text fontSize='2x1'>付款方式:
-                        <Menu>
-                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                                付款方式
-                            </MenuButton>
-                            <MenuList>
-                                <MenuItem>貨到付款</MenuItem>
-                                <MenuItem>載具付款</MenuItem>
-                                <MenuItem>信用卡付款</MenuItem>
-                            </MenuList>
-                        </Menu>
-                    </Text>
+                    <Menu>
+                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                            付款方式
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem onClick={() => { setPayment('現金付款') }}>現金付款</MenuItem>
+                            <MenuItem onClick={() => { setPayment('載具付款') }}>載具付款</MenuItem>
+                            <MenuItem onClick={() => { setPayment('信用卡付款') }}>信用卡付款</MenuItem>
 
+                        </MenuList>
+                    </Menu>
+                    {Payment == '現金付款' && <div>
+                        {/* 這裡會塞條件 */}
+                        <Text>現金支付:{money}元</Text>
+                    </div>}
+
+                    {Payment == '載具付款' && <div>
+                        {/* 這裡會塞條件 */}
+                        <Text>載具支付:{money}元</Text>
+                    </div>}
+
+                    {Payment == '信用卡付款' && <div>
+                        {/* 這裡會塞條件 */}
+                        <Text>信用卡支付:{money}元</Text>
+                        
+                    </div>}
                     <br />
                     <Button className=" left-2 " colorScheme='blue' onClick={() => {
                         setCheckCompleted(true);
                         setPayCompleted(false);
                         setStep(0);
                     }}>上一頁</Button>
-                    <Button className=" left-4 " colorScheme='blue' onClick={() => {
+                    {<Button className=" left-4 " colorScheme='blue' onClick={() => {
                         setPayCompleted(false);
                         setOutCompleted(true);
                         setStep(66);
-                    }}>確認完成</Button>
+                    }}>確認完成</Button>}
 
                 </div>}
 
                 {Outcompleted && <div>
                     <Text fontSize='4xl'>完成訂單</Text>
+                    {/* <div><MealList Order={Orderlist} /></div>暫時這樣用 */}
+                    <div>{Payment}:{money}</div>
 
                     <br />
                     <Button className=" left-2 " colorScheme='blue' onClick={() => {
@@ -85,7 +100,7 @@ export const CheckoutPage = () => {
                     }}>上一頁</Button>
                     <Button className=" left-4 " colorScheme='blue' onClick={() => {
                         navigate('/History')
-                    }}>確認完成</Button>
+                    }}>前往歷史訂單</Button>
                 </div>}
             </div>
         </>
