@@ -21,7 +21,7 @@ export const Footer = () => {
           width="100%"
           display="flex"
           alignItems="center"
-          py={28}
+          py={20}
           justifyContent="center"
           bgPosition="center"
         >

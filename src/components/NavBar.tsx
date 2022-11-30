@@ -33,7 +33,7 @@ export const NavBar = () => {
             <div
                 className="p-5 shadow-lg"
                 style={{
-                    backgroundImage: `url(https://topeat.tw/images/bg-header.webp)`,
+                    backgroundImage: 'url(https://topeat.tw/images/bg-header.webp)',
                 }}
             >
                 <div className="flex justify-between">

@@ -17,8 +17,8 @@ export const Cards = ({ cards }: cardsProps) => {
   return (
     <>
       <SimpleGrid
-        spacing={4}
-        templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+        spacing='2'
+        templateColumns="repeat(auto-fill, minmax(300px, 4fr))"
       >
         {cards.map((card) => {
           return (
