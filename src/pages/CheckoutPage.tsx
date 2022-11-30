@@ -15,7 +15,7 @@ export const CheckoutPage = () => {
     const [step, setStep] = useState<number>(0);
     const [money, setmoney] = useState<number>(0);
     const navigate = useNavigate();
-    const [Chackcompleted, setChackCompleted] = useState<boolean>(true);
+    const [Checkcompleted, setCheckCompleted] = useState<boolean>(true);
     const [Paycompleted, setPayCompleted] = useState<boolean>(false);
     const [Outcompleted, setOutCompleted] = useState<boolean>(false);
     const Orderlist: ListProps[] = [
@@ -32,14 +32,12 @@ export const CheckoutPage = () => {
             <div style={{ backgroundImage: `url(https://topeat.tw/images/bg-bottom.webp)`, height: 700, backgroundSize: 'cover' }}>
                 <NavBar />
                 <Progress value={step} />
-
-
-                {Chackcompleted && <div>
+                {Checkcompleted && <div>
                     <Text fontSize='4xl'>確認訂單</Text>
-                    <div><MealList Order={Orderlist} /></div>{/* 暫時這樣用 */}
+                    {/* <div><MealList Order={Orderlist} /></div>暫時這樣用 */}
 
                     <Button colorScheme='blue' onClick={() => {
-                        setChackCompleted(false);
+                        setCheckCompleted(false);
                         setPayCompleted(true);
                         setStep(33);
                     }}>確認完成</Button>
@@ -64,7 +62,7 @@ export const CheckoutPage = () => {
 
                     <br />
                     <Button className=" left-2 " colorScheme='blue' onClick={() => {
-                        setChackCompleted(true);
+                        setCheckCompleted(true);
                         setPayCompleted(false);
                         setStep(0);
                     }}>上一頁</Button>
@@ -89,9 +87,7 @@ export const CheckoutPage = () => {
                         navigate('/History')
                     }}>確認完成</Button>
                 </div>}
-
             </div>
-
         </>
     )
 }

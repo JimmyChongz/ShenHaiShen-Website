@@ -1,25 +1,34 @@
-import { Box } from "@chakra-ui/react"
-import React from "react"
-import { Slide } from 'react-slideshow-image';
+import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Slide } from "react-slideshow-image";
 
-type slideShowProps = {
-    url: string,
-}
+const SlideImages = [
+  {
+    url: "https://topeat.tw/images/main01.webp",
+  },
+  {
+    url: "https://topeat.tw/images/main02.webp",
+  },
+  {
+    url: "https://topeat.tw/images/main03.webp",
+  },
+  {
+    url: "https://topeat.tw/images/main04.webp",
+  },
+];
 
-interface SlideShowProps {
-    urls: slideShowProps[]
-}
-
-export const SlideShow = ({ urls }: SlideShowProps) => {
-    return (
-        <div className="slide-container">
-            <Slide>
-                {urls.map((slideImage) => (
-                    <div className="each-slide">
-                        <div style={{ backgroundImage: `url(${slideImage.url})`, height: 750 }} />
-                    </div>
-                ))}
-            </Slide>
-        </div>
-    )
-} 
+export const SlideShow = () => {
+  return (
+    <div className="slide-container">
+      <Slide>
+        {SlideImages.map((slideImage) => (
+          <div className="each-slide">
+            <div>
+                <Box bgImage={slideImage.url} bgRepeat='no-repeat' bgPosition='center' style={{height: 1000}} />
+            </div>
+          </div>
+        ))}
+      </Slide>
+    </div>
+  );
+};

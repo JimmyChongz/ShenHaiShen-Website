@@ -30,8 +30,8 @@ export const useRouter = () => {
       element: <MenuPage />,
     },
     {
-      path:'/chackout',
-      element:<CheckoutPage/>,
+      path:'/Checkout',
+      element:<CheckoutPage />,
     },
   ]);
 }
