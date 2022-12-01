@@ -25,8 +25,10 @@ export const Footer = () => {
           justifyContent="center"
           bgPosition="center"
         >
-          <div className="flex justify-start gap-24">
-            <Image src="https://topeat.tw/images/logo-footer.webp" />
+          <div className="flex justify-between gap-24 items-center">
+            <div>
+              <Image src="https://topeat.tw/images/logo-footer.webp" />
+            </div>
             <div>
               <Heading textColor="white" fontSize="lg" display="block" className="pb-4">
                 <StarIcon />  地址 :
@@ -45,7 +47,9 @@ export const Footer = () => {
               <Heading textColor="white" fontSize="lg" display="block" className="pb-4">
                 <EmailIcon />  E-mail :
               </Heading>
-              <Text textColor="white">operaticlife@nuu.edu.tw</Text>
+              <Text textColor="white">V0924015@nuu.edu.tw</Text>
+              <Text textColor="white">V0924037@nuu.edu.tw</Text>
+              <Text textColor="white">V0924027@nuu.edu.tw</Text>
             </div>
             <div className="pt-4">
               <HStack>
