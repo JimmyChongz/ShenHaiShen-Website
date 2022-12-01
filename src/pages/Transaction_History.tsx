@@ -1,5 +1,6 @@
 import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box } from "@chakra-ui/react";
 import React from "react";
+import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { NoticeBoard } from "../components/NoticeBoard/NoticeBoard";
 
@@ -25,8 +26,7 @@ export const Transaction_History = () => {
                 <div><NavBar /></div>
                 <NoticeBoard notices={notices} />
             </div>
-
-
+            <Footer />
         </>
     )
 }

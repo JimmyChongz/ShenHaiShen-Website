@@ -25,13 +25,16 @@ export const CheckoutPage = () => {
         { food: '土魠魚羹', price: 70 },
         { food: '燒肉羹-黃麵', price: 80 },
     ]
-    const [Payment, setPayment] = useState<string>('');
+    const [Payment, setPayment] = useState<string>('付款方式');
 
     return (
         <>
             <NavBar />
             <Progress value={step} />
             <Box bgImage='https://topeat.tw/images/bg-bottom.webp' bgRepeat='repeat' bgSize='contain' py={96}>
+                <div>
+
+                </div>
                 {Checkcompleted && <div>
                     <Text fontSize='4xl'>確認訂單</Text>
                     {/* <div><MealList Order={Orderlist} /></div>暫時這樣用 */}
@@ -46,7 +49,6 @@ export const CheckoutPage = () => {
 
 
                 {Paycompleted && <div>
-                    <Text fontSize='4xl'>付款方式</Text>
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                             {Payment}
