@@ -17,7 +17,7 @@ export const Staple = () => {
           <MenuItem
             onClick={() => {
               setMenu("白飯");
-              setShopCarStaple('白飯')
+              setShopCarStaple("白飯");
             }}
           >
             白飯
@@ -25,7 +25,7 @@ export const Staple = () => {
           <MenuItem
             onClick={() => {
               setMenu("油麵");
-              setShopCarStaple('油麵')
+              setShopCarStaple("油麵")
             }}
           >
             油麵
@@ -33,7 +33,7 @@ export const Staple = () => {
           <MenuItem
             onClick={() => {
               setMenu("米粉");
-              setShopCarStaple('米粉')
+              setShopCarStaple("米粉")
             }}
           >
             米粉
