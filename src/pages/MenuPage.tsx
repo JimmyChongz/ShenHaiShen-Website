@@ -279,7 +279,7 @@ export const MenuPage = () => {
                                                             });
                                                             setOrderCount(orderCount + 1);
                                                             setShopCarPrice(orderGun.price);
-                                                            setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元");
+                                                            setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元 ,");
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderGun.price);
                                                         }}
                                                     >
@@ -327,7 +327,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderConvenient.food + " " + shopCarpPrice);
+                                                            setShopCarFood(shopCarFood + orderConvenient.food + " " + shopCarpPrice + "元 ,");
                                                             setShopCarPrice(orderConvenient.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderConvenient.price)
                                                         }}
@@ -376,7 +376,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderDish.food + " " + shopCarpPrice);
+                                                            setShopCarFood(shopCarFood + orderDish.food + " " + shopCarpPrice + "元 ,");
                                                             setShopCarPrice(orderDish.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderDish.price);
                                                         }}
@@ -425,7 +425,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderOther.food + " " + shopCarpPrice);
+                                                            setShopCarFood(shopCarFood + orderOther.food + " " + shopCarpPrice + "元 ,");
                                                             setShopCarPrice(orderOther.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderOther.price);
                                                         }}
