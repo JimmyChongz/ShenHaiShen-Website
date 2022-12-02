@@ -232,7 +232,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 2000,
+                                                                duration: 9000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
