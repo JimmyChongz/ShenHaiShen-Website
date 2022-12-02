@@ -2,7 +2,6 @@ import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPane
 import { NoticeBoardItem } from "./NoticeBoardItem";
 interface noticeMessage {
     title: string,
-    message: string
     price: number
 }
 interface NoticeBoardProps {
@@ -14,7 +13,7 @@ export const NoticeBoard = ({ notices }: NoticeBoardProps) => {
             {
                 notices.map((notice, index) => {
                     return (
-                        <NoticeBoardItem title={notice.title} message={notice.message} price={notice.price} />
+                        <NoticeBoardItem title={notice.title} price={notice.price} />
                     )
                 })
             }

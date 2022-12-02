@@ -17,10 +17,5 @@ export const shopCarPriceTotalState = atom({
 
 export const shopCarStapleState = atom({
     key: 'SHOPCARSTAPLE_STATE',
-    default: '',
-})
-
-export const showShopCarItemState = atom({
-    key: 'ADDSHOPCARITEM_STATE',
-    default: false,
+    default: '無',
 })
