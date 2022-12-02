@@ -4,7 +4,7 @@ import {
   shopCarFoodState,
   shopCarPriceState,
   shopCarStapleState,
-  showShopCarItemState,
+
 } from "../Store/MainStore";
 
 interface shopCarItemProps {
@@ -17,8 +17,7 @@ export const ShopCarItem = ({ food, staple, price }: shopCarItemProps) => {
   const [ShopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
   const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
   const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
-  const [isShopCarItem, setShowShopCarItem] =
-    useRecoilState(showShopCarItemState);
+
   return (
     <>
       <Tr>
