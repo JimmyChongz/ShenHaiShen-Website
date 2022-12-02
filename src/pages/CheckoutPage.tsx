@@ -222,11 +222,5 @@ export const CheckoutPage = () => {
         </>
     );
 };
-function setOrderCount(arg0: number) {
-    throw new Error("Function not implemented.");
-}
 
-function toast(arg0: { title: string; description: string; status: string; duration: number; isClosable: boolean; }) {
-    throw new Error("Function not implemented.");
-}
 
