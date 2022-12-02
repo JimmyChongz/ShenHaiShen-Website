@@ -57,6 +57,29 @@ export const CheckoutPage = () => {
                     <TableContainer>
                         <Table variant="simple">
                             <TableCaption>
+                            <Button
+                                ml="auto"
+                                mr={9}
+                                my={2}
+                                bg="tomato"
+                                textColor="white"
+                                onClick={() => {
+                                    setShopCarFood('')
+                                    setShopCarPriceTotal(0)
+                                    setOrderCount(0)
+                                    toast({
+                                        title: " 已清除購物車",
+                                        description:
+                                            "We've del your meals to shop car.",
+                                        status: "success",
+                                        duration: 9000,
+                                        isClosable: true,
+                                    });
+                                    
+                                }}
+                            >
+                                清除購物車
+                            </Button>
                                 <Button
                                     colorScheme="blue"
                                     onClick={() => {
@@ -199,3 +222,11 @@ export const CheckoutPage = () => {
         </>
     );
 };
+function setOrderCount(arg0: number) {
+    throw new Error("Function not implemented.");
+}
+
+function toast(arg0: { title: string; description: string; status: string; duration: number; isClosable: boolean; }) {
+    throw new Error("Function not implemented.");
+}
+
