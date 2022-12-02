@@ -41,9 +41,7 @@ export const CheckoutPage = () => {
     const [step, setStep] = useState<number>(0);
     const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
-    const [Checkcompleted, setCheckCompleted] = useState<boolean>(true);
-    const [Paycompleted, setPayCompleted] = useState<boolean>(false);
-    const [Outcompleted, setOutCompleted] = useState<boolean>(false);
+    const [Checkcompleted, setCheckCompleted] = useState<string>('確認訂單');
     const [ShopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
     const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
@@ -54,20 +52,19 @@ export const CheckoutPage = () => {
         <>
             <NavBar />
             <Progress value={step} />
-            <Box bgImage="https://topeat.tw/images/bg-bottom.webp" bgRepeat="repeat">
-                {Checkcompleted && (
+            <Box bgImage="https://topeat.tw/images/bg-bottom.webp" bgRepeat="cover" h='750'>
+                {Checkcompleted == '確認訂單' && (
                     <TableContainer>
                         <Table variant="simple">
                             <TableCaption>
                                 <Button
                                     colorScheme="blue"
                                     onClick={() => {
-                                        setCheckCompleted(false);
-                                        setPayCompleted(true);
+                                        setCheckCompleted('確認付款');
                                         setStep(33);
                                     }}
                                 >
-                                    確認完成
+                                    確認訂單
                                 </Button>
                             </TableCaption>
                             <Thead>
@@ -93,7 +90,7 @@ export const CheckoutPage = () => {
                         </Table>
                     </TableContainer>
                 )}
-                {Paycompleted && (
+                {Checkcompleted == '確認付款' && (
                     <div>
                         <Menu>
                             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
@@ -145,8 +142,7 @@ export const CheckoutPage = () => {
                             className=" left-2 "
                             colorScheme="blue"
                             onClick={() => {
-                                setCheckCompleted(true);
-                                setPayCompleted(false);
+                                setCheckCompleted('確認訂單');
                                 setStep(0);
                             }}
                         >
@@ -157,18 +153,17 @@ export const CheckoutPage = () => {
                                 className=" left-4 "
                                 colorScheme="blue"
                                 onClick={() => {
-                                    setPayCompleted(false);
-                                    setOutCompleted(true);
+                                    setCheckCompleted('完成訂單');
                                     setStep(66);
                                 }}
                             >
-                                確認完成
+                                確認付款
                             </Button>
                         }
                     </div>
                 )}
 
-                {Outcompleted && (
+                {Checkcompleted == '完成訂單' && (
                     <div>
                         <Text fontSize="4xl">完成訂單</Text>
                         {/* <div><MealList Order={Orderlist} /></div>暫時這樣用 */}
@@ -183,8 +178,7 @@ export const CheckoutPage = () => {
                             className=" left-2 "
                             colorScheme="blue"
                             onClick={() => {
-                                setOutCompleted(false);
-                                setPayCompleted(true);
+                                setCheckCompleted('確認付款')
                                 setStep(33);
                             }}
                         >
@@ -197,7 +191,7 @@ export const CheckoutPage = () => {
                                 navigate("/History");
                             }}
                         >
-                            前往歷史訂單
+                            確認完成並前往歷史訂單
                         </Button>
                     </div>
                 )}
