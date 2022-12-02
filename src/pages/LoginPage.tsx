@@ -2,7 +2,7 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar';
 
-export default function Login() {
+export const LoginPage = () => {
     const nevigate = useNavigate();
     return (
         <> <NavBar />
@@ -77,6 +77,7 @@ export default function Login() {
                             <a
                                 href="#"
                                 className="font-medium text-purple-600 hover:underline"
+                                onClick={() => { nevigate(`/Register`) }}
                             >
                                 現在註冊
                             </a>
