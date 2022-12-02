@@ -10,7 +10,7 @@ interface noticeMessage {
     price: number
 }
 
-export const Transaction_History = () => {
+export const HistoryPage = () => {
     const notices: noticeMessage[] = [
         { title: '訂單 1', message: '土魠魚羹-黃麵,土魠魚羹-米粉,咖哩豬排飯,滷蛋', price: 250 },
         { title: '訂單 2', message: '燒肉羹-飯,咖哩燒肉飯,香酥魚片', price: 220 },
