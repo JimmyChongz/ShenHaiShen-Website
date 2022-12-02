@@ -79,32 +79,28 @@ export const NavBar = () => {
                             <div className="text-3xl font-extrabold">個人帳戶</div>
                         </DrawerHeader>
                         <DrawerBody>
-                            <List>
+                            <List spacing={4}>
                                 <ListItem
-                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3 "
-                                    bg="pink"
+                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3 text-center "
+                                    bg="pink.100"
                                     onClick={() => {
-                                        navigate(`/home`);
+                                        navigate(`/Home`);
                                     }}
                                 >
                                     主頁
                                 </ListItem>
-                            </List>
-                            <List>
                                 <ListItem
-                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3"
-                                    bg="pink"
+                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3 text-center"
+                                    bg="pink.100"
                                     onClick={() => {
                                         navigate(`/menu`);
                                     }}
                                 >
                                     立即下定
                                 </ListItem>
-                            </List>
-                            <List>
                                 <ListItem
-                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3"
-                                    bg="pink"
+                                    className="text-2xl cursor-pointer rounded-lg px-6 py-3 text-center"
+                                    bg='pink.100'
                                     onClick={() => {
                                         navigate(`/history`);
                                     }}

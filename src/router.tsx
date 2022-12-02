@@ -4,7 +4,7 @@ import {
 import { HomePage } from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import { MenuPage } from "./pages/MenuPage";
-import { Transaction_History } from "./pages/Transaction_History";
+import { HistoryPage } from "./pages/HistoryPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
 
 export const useRouter = () => {
@@ -19,7 +19,7 @@ export const useRouter = () => {
     },
     {
       path: '/History',
-      element: <Transaction_History />,
+      element: <HistoryPage />,
     },
     {
       path: '/Login',

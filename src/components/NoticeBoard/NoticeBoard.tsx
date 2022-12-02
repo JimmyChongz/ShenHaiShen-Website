@@ -17,7 +17,6 @@ export const NoticeBoard = ({ notices }: NoticeBoardProps) => {
                         <NoticeBoardItem title={notice.title} message={notice.message} price={notice.price} />
                     )
                 })
-
             }
         </Accordion>
     )
