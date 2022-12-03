@@ -19,3 +19,8 @@ export const shopCarStapleState = atom({
     key: 'SHOPCARSTAPLE_STATE',
     default: '無',
 })
+
+export const shopCarCountState = atom({
+    key: 'SHOPCARCOUNT_STATE',
+    default: 0,
+})

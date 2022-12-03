@@ -23,7 +23,7 @@ import { RecoilRoot, useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { Staple } from "../components/Staple";
-import { shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
+import { shopCarCountState, shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
 
 interface ListProps {
     food: string;
@@ -158,7 +158,7 @@ export const MenuPage = () => {
     ];
     const nevigate = useNavigate();
     const toast = useToast();
-    const [orderCount, setOrderCount] = useState<number>(0);
+    const [orderCount, setOrderCount] = useRecoilState(shopCarCountState);
     const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
@@ -232,7 +232,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
@@ -281,11 +281,11 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(orderConvenient.food);
+                                                            setShopCarFood(shopCarFood + orderConvenient.food + orderConvenient.price + "元 ,");
                                                             setShopCarPrice(orderConvenient.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderConvenient.price)
                                                         }}
@@ -330,11 +330,11 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(orderDish.food);
+                                                            setShopCarFood(shopCarFood + orderDish.food + orderDish.price + "元 ,");
                                                             setShopCarPrice(orderDish.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderDish.price)
                                                         }}
@@ -379,13 +379,13 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(orderOther.food);
-                                                            setShopCarPrice(orderOther.price)
-                                                            setShopCarPriceTotal(shopCarPriceTotal + orderOther.price)
+                                                            setShopCarFood(shopCarFood + orderOther.food + orderOther.price + "元 ,");
+                                                            setShopCarPrice(orderOther.price);
+                                                            setShopCarPriceTotal(shopCarPriceTotal + orderOther.price);
                                                         }}
                                                     >
                                                         加入購物車

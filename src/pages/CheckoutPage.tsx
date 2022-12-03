@@ -148,7 +148,7 @@ export const CheckoutPage = () => {
                         >
                             上一頁
                         </Button>
-                        {
+                        {Payment != '付款方式' &&
                             <Button
                                 className=" left-4 "
                                 colorScheme="blue"
