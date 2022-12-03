@@ -185,6 +185,29 @@ export const MenuPage = () => {
                             <Tab>
                                 <Heading size="md">其他</Heading>
                             </Tab>
+                            {/*<Button
+                                ml="auto"
+                                mr={9}
+                                my={2}
+                                bg="tomato"
+                                textColor="white"
+                                onClick={() => {
+                                    setShopCarFood('')
+                                    setShopCarPriceTotal(0)
+                                    setOrderCount(0)
+                                    toast({
+                                        title: " 已清除購物車",
+                                        description:
+                                            "We've del your meals to shop car.",
+                                        status: "success",
+                                        duration: 9000,
+                                        isClosable: true,
+                                    });
+                                    
+                                }}
+                            >
+                                清除購物車({orderCount})
+                            </Button>*/}
                             <Button
                                 ml="auto"
                                 mr={9}

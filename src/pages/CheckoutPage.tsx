@@ -24,6 +24,7 @@ import {
     Th,
     Thead,
     Tr,
+    useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -38,6 +39,7 @@ import {
 } from "../Store/MainStore";
 
 export const CheckoutPage = () => {
+    const toast = useToast()
     const [step, setStep] = useState<number>(0);
     const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
@@ -47,7 +49,6 @@ export const CheckoutPage = () => {
     const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [Payment, setPayment] = useState<string>("付款方式");
-
     return (
         <>
             <NavBar />
@@ -57,6 +58,28 @@ export const CheckoutPage = () => {
                     <TableContainer>
                         <Table variant="simple">
                             <TableCaption>
+                            <Button
+                                ml="auto"
+                                mr={9}
+                                my={2}
+                                bg="tomato"
+                                textColor="white"
+                                onClick={() => {
+                                    setShopCarFood('')
+                                    setShopCarPriceTotal(0)
+                                    toast({
+                                        title: " 已清除購物車",
+                                        description:
+                                            "We've del your meals to shop car.",
+                                        status: "success",
+                                        duration: 9000,
+                                        isClosable: true,
+                                    });
+                                    
+                                }}
+                            >
+                                清除購物車
+                            </Button>
                                 <Button
                                     colorScheme="blue"
                                     onClick={() => {
@@ -199,3 +222,4 @@ export const CheckoutPage = () => {
         </>
     );
 };
+
