@@ -24,6 +24,7 @@ import {
     Th,
     Thead,
     Tr,
+    useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -38,6 +39,7 @@ import {
 } from "../Store/MainStore";
 
 export const CheckoutPage = () => {
+    const toast = useToast()
     const [step, setStep] = useState<number>(0);
     const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
@@ -66,7 +68,6 @@ export const CheckoutPage = () => {
                                 onClick={() => {
                                     setShopCarFood('')
                                     setShopCarPriceTotal(0)
-                                    setOrderCount(0)
                                     toast({
                                         title: " 已清除購物車",
                                         description:
@@ -222,11 +223,5 @@ export const CheckoutPage = () => {
         </>
     );
 };
-function setOrderCount(arg0: number) {
-    throw new Error("Function not implemented.");
-}
 
-function toast(arg0: { title: string; description: string; status: string; duration: number; isClosable: boolean; }) {
-    throw new Error("Function not implemented.");
-}
 
