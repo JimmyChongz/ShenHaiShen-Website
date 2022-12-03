@@ -5,7 +5,8 @@ import { NavBar } from '../components/NavBar';
 export const LoginPage = () => {
     const nevigate = useNavigate();
     return (
-        <> <NavBar />
+        <>
+            <NavBar />
             <Box bgImage='https://topeat.tw/images/bg-bottom.webp'>
                 <figure className="absolute inset-y-32 left-32 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-pink-100">
                     <img className="w-30 h-30 md:w-68 md:h-auto md:rounded-none rounded-full mx-auto" src="https://i.imgur.com/3IXuZo2.jpg" alt="" width="384" height="512"></img>
@@ -22,7 +23,6 @@ export const LoginPage = () => {
                         </blockquote>
                     </div>
                 </figure><div className="relative flex flex-col justify-left min-h-screen overflow-hidden">
-
                     <div className="absolute inset-y-32 right-32 w-96 p-12 m-auto bg-white rounded shadow-2xl shadow-indio-500/50 lg:max-w-xl">
                         <h1 className="text-3xl font-semibold text-center text-pink-500 ">
                             SeaFood
@@ -62,7 +62,6 @@ export const LoginPage = () => {
                                 </button>
                             </div>
                         </form>
-
                         <p className="mt-8 text-xs font-light text-center text-gray-700">
                             {" "}
                             還沒有帳號?{" "}
@@ -75,7 +74,6 @@ export const LoginPage = () => {
                             </a>
                         </p>
                     </div>
-
                 </div>
             </Box>
         </>

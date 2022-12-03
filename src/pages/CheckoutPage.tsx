@@ -22,18 +22,14 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { NavBar } from "../components/NavBar";
 import {
-    shopCarFoodState,
     shopCarItemStackState,
-    shopCarPriceState,
     shopCarPriceTotalState,
-    shopCarStapleState,
 } from "../Store/MainStore";
 
 export const CheckoutPage = () => {
     const [step, setStep] = useState<number>(0);
     const navigate = useNavigate();
     const [Checkcompleted, setCheckCompleted] = useState<string>('確認訂單');
-    const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     const [Payment, setPayment] = useState<string>("付款方式");

@@ -17,13 +17,12 @@ import {
     useToast,
     SimpleGrid,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { Staple } from "../components/Staple";
-import { shopCarCountState, shopCarFoodState, shopCarItemStackState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
+import { shopCarCountState, shopCarItemStackState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
 
 interface ListProps {
     food: string;
@@ -159,8 +158,6 @@ export const MenuPage = () => {
     const nevigate = useNavigate();
     const toast = useToast();
     const [orderCount, setOrderCount] = useRecoilState(shopCarCountState);
-    const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
-    const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     return (
@@ -217,7 +214,7 @@ export const MenuPage = () => {
                                                             NT${orderGun.price}
                                                         </Text>
                                                     </Stack>
-                                                    <Staple />
+                                                    {/* <Staple /> */}
                                                 </CardBody>
                                                 <CardFooter>
                                                     <Box

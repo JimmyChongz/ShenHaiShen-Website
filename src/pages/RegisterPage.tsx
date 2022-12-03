@@ -6,9 +6,9 @@ export const RegisterPage = () => {
     const nevigate = useNavigate();
     const toast = useToast();
     return (
-        <> <NavBar />
+        <>
+            <NavBar />
             <Box bgImage='https://topeat.tw/images/bg-bottom.webp'>
-
                 <figure className="absolute inset-y-32 left-32 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-pink-100">
                 </figure><div className="relative flex flex-col justify-left min-h-screen overflow-hidden">
                     <div className=" w-96 p-12 mt-auto top-0 self-center left-96 right-96  bg-white rounded shadow-2xl shadow-indio-500/50 lg:max-w-xl">
@@ -97,7 +97,6 @@ export const RegisterPage = () => {
                             </a>
                         </p>
                     </div>
-
                 </div>
             </Box >
         </>
