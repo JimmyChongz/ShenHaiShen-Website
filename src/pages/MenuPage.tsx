@@ -27,7 +27,7 @@ import { RecoilRoot, useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { Staple } from "../components/Staple";
-import { shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
+import { shopCarCountState, shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
 
 interface ListProps {
     food: string;
@@ -168,7 +168,7 @@ export const MenuPage = () => {
     ];
     const nevigate = useNavigate();
     const toast = useToast();
-    const [orderCount, setOrderCount] = useState<number>(0);
+    const [orderCount, setOrderCount] = useRecoilState(shopCarCountState);
     const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
@@ -327,7 +327,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderConvenient.food + " " + shopCarpPrice + "元 ,");
+                                                            setShopCarFood(shopCarFood + orderConvenient.food + orderConvenient.price + "元 ,");
                                                             setShopCarPrice(orderConvenient.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderConvenient.price)
                                                         }}
@@ -376,7 +376,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderDish.food + " " + shopCarpPrice + "元 ,");
+                                                            setShopCarFood(shopCarFood + orderDish.food + orderDish.price + "元 ,");
                                                             setShopCarPrice(orderDish.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderDish.price);
                                                         }}
@@ -425,7 +425,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderOther.food + " " + shopCarpPrice + "元 ,");
+                                                            setShopCarFood(shopCarFood + orderOther.food + orderOther.price + "元 ,");
                                                             setShopCarPrice(orderOther.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderOther.price);
                                                         }}
