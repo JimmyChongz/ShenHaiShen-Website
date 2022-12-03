@@ -2,10 +2,11 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
+import { LoginPage } from "./pages/LoginPage";
 import { MenuPage } from "./pages/MenuPage";
 import { HistoryPage } from "./pages/HistoryPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
+import { RegisterPage } from "./pages/RegisterPage";
 
 export const useRouter = () => {
   return createBrowserRouter([
@@ -30,8 +31,12 @@ export const useRouter = () => {
       element: <MenuPage />,
     },
     {
-      path:'/Checkout',
-      element:<CheckoutPage />,
+      path: '/Checkout',
+      element: <CheckoutPage />,
+    },
+    {
+      path: '/Register',
+      element: <RegisterPage />,
     },
   ]);
 }

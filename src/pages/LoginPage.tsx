@@ -2,7 +2,7 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar';
 
-export default function Login() {
+export const LoginPage = () => {
     const nevigate = useNavigate();
     return (
         <> <NavBar />
@@ -20,14 +20,6 @@ export default function Login() {
                                 </Text>
                             </div>
                         </blockquote>
-                        <figcaption className="font-medium">
-                            <div className="text-sky-500 dark:text-sky-400">
-                                Sarah Dayan
-                            </div>
-                            <div className="text-sky-200 dark:text-slate-500">
-                                Staff Engineer, Algolia
-                            </div>
-                        </figcaption>
                     </div>
                 </figure><div className="relative flex flex-col justify-left min-h-screen overflow-hidden">
 
@@ -77,6 +69,7 @@ export default function Login() {
                             <a
                                 href="#"
                                 className="font-medium text-purple-600 hover:underline"
+                                onClick={() => { nevigate(`/Register`) }}
                             >
                                 現在註冊
                             </a>
