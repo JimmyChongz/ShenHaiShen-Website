@@ -215,7 +215,6 @@ export const MenuPage = () => {
                                                         <Text color="blue.600" fontSize="2xl">
                                                             NT${orderGun.price}
                                                         </Text>
-                                                        <Staple />
                                                     </Stack>
                                                 </CardBody>
                                                 <CardFooter>
@@ -236,7 +235,7 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(orderGun.food);
+                                                            setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元 ,");
                                                             setShopCarPrice(orderGun.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderGun.price)
                                                         }}
