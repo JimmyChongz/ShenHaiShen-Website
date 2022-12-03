@@ -4,12 +4,9 @@ import { useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { NoticeBoard } from "../components/NoticeBoard/NoticeBoard";
-import { shopCarStapleState, shopCarPriceState, shopCarPriceTotalState, shopCarFoodState, shopCarItemStackState } from "../Store/MainStore";
+import { shopCarStapleState, shopCarPriceTotalState, shopCarItemStackState } from "../Store/MainStore";
 
 export const HistoryPage = () => {
-
-    const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
-    const [ShopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
 
