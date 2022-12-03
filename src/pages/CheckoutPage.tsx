@@ -49,7 +49,6 @@ export const CheckoutPage = () => {
     const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [Payment, setPayment] = useState<string>("付款方式");
-
     return (
         <>
             <NavBar />
@@ -223,5 +222,4 @@ export const CheckoutPage = () => {
         </>
     );
 };
-
 
