@@ -38,6 +38,7 @@ import {
 } from "../Store/MainStore";
 
 export const CheckoutPage = () => {
+    const toast = useToast();
     const [step, setStep] = useState<number>(0);
     const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
@@ -47,7 +48,6 @@ export const CheckoutPage = () => {
     const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [Payment, setPayment] = useState<string>("付款方式");
-    const toast = useToast();
     return (
         <>
             <NavBar />
@@ -223,8 +223,3 @@ export const CheckoutPage = () => {
     );
 };
 
-
-
-function useToast() {
-throw new Error("Function not implemented.");
-}
