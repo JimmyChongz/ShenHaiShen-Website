@@ -16,10 +16,6 @@ import {
     Text,
     useToast,
     SimpleGrid,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuList,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -34,12 +30,6 @@ interface ListProps {
     price: number;
     src: string;
     message: string;
-}
-
-interface ShopCarStackProps {
-    food: string,
-    price: number,
-    staple: string
 }
 
 export const MenuPage = () => {
@@ -172,8 +162,6 @@ export const MenuPage = () => {
     const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
-    const [shopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
-    const [menu, setMenu] = useState("配餐");
     return (
         <>
             <RecoilRoot>
@@ -227,37 +215,7 @@ export const MenuPage = () => {
                                                         <Text color="blue.600" fontSize="2xl">
                                                             NT${orderGun.price}
                                                         </Text>
-                                                        {/* <Menu>
-                                                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                                                                {menu}
-                                                            </MenuButton>
-                                                            <MenuList>
-                                                                <MenuItem
-                                                                    onClick={() => {
-                                                                        setMenu("白飯");
-                                                                        setShopCarStaple("白飯");
-                                                                    }}
-                                                                >
-                                                                    白飯
-                                                                </MenuItem>
-                                                                <MenuItem
-                                                                    onClick={() => {
-                                                                        setMenu("油麵");
-                                                                        setShopCarStaple("油麵")
-                                                                    }}
-                                                                >
-                                                                    油麵
-                                                                </MenuItem>
-                                                                <MenuItem
-                                                                    onClick={() => {
-                                                                        setMenu("米粉");
-                                                                        setShopCarStaple("米粉")
-                                                                    }}
-                                                                >
-                                                                    米粉
-                                                                </MenuItem>
-                                                            </MenuList>
-                                                        </Menu> */}
+                                                        <Staple />
                                                     </Stack>
                                                 </CardBody>
                                                 <CardFooter>
@@ -278,9 +236,9 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
+                                                            setShopCarFood(orderGun.food);
                                                             setShopCarPrice(orderGun.price);
-                                                            setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元 ,");
-                                                            setShopCarPriceTotal(shopCarPriceTotal + orderGun.price);
+                                                            setShopCarPriceTotal(shopCarPriceTotal + orderGun.price)
                                                         }}
                                                     >
                                                         加入購物車
@@ -378,7 +336,7 @@ export const MenuPage = () => {
                                                             setOrderCount(orderCount + 1);
                                                             setShopCarFood(shopCarFood + orderDish.food + orderDish.price + "元 ,");
                                                             setShopCarPrice(orderDish.price);
-                                                            setShopCarPriceTotal(shopCarPriceTotal + orderDish.price);
+                                                            setShopCarPriceTotal(shopCarPriceTotal + orderDish.price)
                                                         }}
                                                     >
                                                         加入購物車
