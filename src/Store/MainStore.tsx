@@ -24,3 +24,15 @@ export const shopCarCountState = atom({
     key: 'SHOPCARCOUNT_STATE',
     default: 0,
 })
+
+interface shopCarItemStackProps {
+    food: string,
+    price: number
+}
+
+let shopCarItems: shopCarItemStackProps[] = [];
+
+export const shopCarItemStackState = atom({
+    key: 'SHOPCARITEMSTACK_STATE',
+    default: shopCarItems
+})

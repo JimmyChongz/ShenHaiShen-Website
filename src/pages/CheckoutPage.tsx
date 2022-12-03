@@ -8,19 +8,11 @@ import {
     MenuItem,
     MenuList,
     Progress,
-    Select,
-    Tab,
     Table,
     TableCaption,
     TableContainer,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
     Tbody,
-    Td,
     Text,
-    Tfoot,
     Th,
     Thead,
     Tr,
@@ -30,9 +22,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { NavBar } from "../components/NavBar";
-import { ShopCarItem } from "../components/ShopCarItem";
 import {
     shopCarFoodState,
+    shopCarItemStackState,
     shopCarPriceState,
     shopCarPriceTotalState,
     shopCarStapleState,
@@ -48,6 +40,7 @@ export const CheckoutPage = () => {
     const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
     const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
+    const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     const [Payment, setPayment] = useState<string>("付款方式");
     return (
         <>
@@ -101,14 +94,27 @@ export const CheckoutPage = () => {
                                 </Tr>
                             </Thead>
                             <Tbody>
-                                <Tr>
-                                    <Th>
-                                        <Text fontSize="2xl">{ShopCarFood}</Text>
-                                    </Th>
-                                    <Th>
-                                        <Text fontSize="2xl">{ShopCarPriceTotal}</Text>
-                                    </Th>
-                                </Tr>
+                                <>
+                                    {
+                                        shopCarItems.map((shopCarItem) => {
+                                            return (
+                                                <Tr>
+                                                    <Th>
+                                                        <Text fontSize="2xl">{shopCarItem.food}</Text>
+                                                    </Th>
+                                                    <Th>
+                                                        <Text fontSize="2xl">{shopCarItem.price} 元</Text>
+                                                    </Th>
+                                                </Tr>
+                                            )
+                                        })
+                                    }
+                                    <Tr>
+                                        <Th>
+                                            <Text fontSize="2xl">總金額：{ShopCarPriceTotal}</Text>
+                                        </Th>
+                                    </Tr>
+                                </>
                             </Tbody>
                         </Table>
                     </TableContainer>

@@ -23,7 +23,7 @@ import { RecoilRoot, useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { Staple } from "../components/Staple";
-import { shopCarCountState, shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
+import { shopCarCountState, shopCarFoodState, shopCarItemStackState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
 
 interface ListProps {
     food: string;
@@ -162,6 +162,7 @@ export const MenuPage = () => {
     const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
+    const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     return (
         <>
             <RecoilRoot>
@@ -261,6 +262,7 @@ export const MenuPage = () => {
                                                             setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元 ,");
                                                             setShopCarPrice(orderGun.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderGun.price)
+                                                            setShopCarItems([...shopCarItems, { food: orderGun.food, price: orderGun.price }])
                                                         }}
                                                     >
                                                         加入購物車

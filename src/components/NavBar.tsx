@@ -22,12 +22,14 @@ import {
     ButtonGroup,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
     const [isOpen, setOpen] = useState(false);
     const [isAlert, setAlert] = useState(false);
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <>
             <div
@@ -87,7 +89,7 @@ export const NavBar = () => {
                                         navigate(`/Home`);
                                     }}
                                 >
-                                    主頁
+                                    {t('主頁')}
                                 </ListItem>
                                 <ListItem
                                     className="text-2xl cursor-pointer rounded-lg px-6 py-3 text-center"
@@ -96,7 +98,7 @@ export const NavBar = () => {
                                         navigate(`/menu`);
                                     }}
                                 >
-                                    立即下定
+                                    {t('立即下訂')}
                                 </ListItem>
                                 <ListItem
                                     className="text-2xl cursor-pointer rounded-lg px-6 py-3 text-center"
@@ -105,7 +107,7 @@ export const NavBar = () => {
                                         navigate(`/history`);
                                     }}
                                 >
-                                    歷史訂單
+                                    {t('歷史訂單')}
                                 </ListItem>
                             </List>
                         </DrawerBody>
