@@ -1,7 +1,7 @@
 import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box } from "@chakra-ui/react";
 import { NoticeBoardItem } from "./NoticeBoardItem";
 interface noticeMessage {
-    title: string,
+    food: string,
     price: number
 }
 interface NoticeBoardProps {
@@ -13,7 +13,7 @@ export const NoticeBoard = ({ notices }: NoticeBoardProps) => {
             {
                 notices.map((notice, index) => {
                     return (
-                        <NoticeBoardItem title={notice.title} price={notice.price} />
+                        <NoticeBoardItem title={notice.food} price={notice.price} />
                     )
                 })
             }
