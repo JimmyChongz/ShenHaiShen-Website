@@ -33,12 +33,9 @@ import {
 export const CheckoutPage = () => {
     const toast = useToast()
     const [step, setStep] = useState<number>(0);
-    const [money, setmoney] = useState<number>(390);
     const navigate = useNavigate();
     const [Checkcompleted, setCheckCompleted] = useState<string>('確認訂單');
-    const [ShopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [ShopCarStaple, setShopCarStaple] = useRecoilState(shopCarStapleState);
-    const [ShopCarPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     const [Payment, setPayment] = useState<string>("付款方式");
@@ -95,7 +92,7 @@ export const CheckoutPage = () => {
                             </Thead>
                             <Tbody>
                                 <>
-                                    {
+                                    {true &&
                                         shopCarItems.map((shopCarItem) => {
                                             return (
                                                 <Tr>
@@ -103,7 +100,7 @@ export const CheckoutPage = () => {
                                                         <Text fontSize="2xl">{shopCarItem.food}</Text>
                                                     </Th>
                                                     <Th>
-                                                        <Text fontSize="2xl">{shopCarItem.price} 元</Text>
+                                                        <Text fontSize="2xl">NT$: {shopCarItem.price} 元</Text>
                                                     </Th>
                                                 </Tr>
                                             )
@@ -111,7 +108,10 @@ export const CheckoutPage = () => {
                                     }
                                     <Tr>
                                         <Th>
-                                            <Text fontSize="2xl">總金額：{ShopCarPriceTotal}</Text>
+                                            <Text></Text>
+                                        </Th>
+                                        <Th>
+                                            <Text fontSize="2xl">總金額：NT${ShopCarPriceTotal}</Text>
                                         </Th>
                                     </Tr>
                                 </>

@@ -240,6 +240,7 @@ export const MenuPage = () => {
                                                             NT${orderGun.price}
                                                         </Text>
                                                     </Stack>
+                                                    <Staple />
                                                 </CardBody>
                                                 <CardFooter>
                                                     <Box
@@ -259,8 +260,6 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderGun.food + orderGun.price + "元 ,");
-                                                            setShopCarPrice(orderGun.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderGun.price)
                                                             setShopCarItems([...shopCarItems, { food: orderGun.food, price: orderGun.price }])
                                                         }}
@@ -309,9 +308,8 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderConvenient.food + orderConvenient.price + "元 ,");
-                                                            setShopCarPrice(orderConvenient.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderConvenient.price)
+                                                            setShopCarItems([...shopCarItems, { food: orderConvenient.food, price: orderConvenient.price }])
                                                         }}
                                                     >
                                                         加入購物車
@@ -358,9 +356,8 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderDish.food + orderDish.price + "元 ,");
-                                                            setShopCarPrice(orderDish.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderDish.price)
+                                                            setShopCarItems([...shopCarItems, { food: orderDish.food, price: orderDish.price }])
                                                         }}
                                                     >
                                                         加入購物車
@@ -407,9 +404,8 @@ export const MenuPage = () => {
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
-                                                            setShopCarFood(shopCarFood + orderOther.food + orderOther.price + "元 ,");
-                                                            setShopCarPrice(orderOther.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderOther.price);
+                                                            setShopCarItems([...shopCarItems, { food: orderOther.food, price: orderOther.price }])
                                                         }}
                                                     >
                                                         加入購物車
