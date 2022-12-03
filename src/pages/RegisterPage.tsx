@@ -2,12 +2,9 @@ import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Button, Heading, T
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar';
 import { useToast } from '@chakra-ui/react'
-function toast(arg0: { title: string; description: string; status: string; duration: number; isClosable: boolean; }) {
-    throw new Error('Function not implemented.');
-}
-
 export const RegisterPage = () => {
     const nevigate = useNavigate();
+    const toast = useToast();
     return (
         <> <NavBar />
             <Box bgImage='https://topeat.tw/images/bg-bottom.webp'>

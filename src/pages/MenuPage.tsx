@@ -23,7 +23,7 @@ import { RecoilRoot, useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
 import { NavBar } from "../components/NavBar";
 import { Staple } from "../components/Staple";
-import { shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState, showShopCarItemState } from "../Store/MainStore";
+import { shopCarFoodState, shopCarPriceState, shopCarPriceTotalState, shopCarStapleState } from "../Store/MainStore";
 
 interface ListProps {
     food: string;
@@ -162,7 +162,6 @@ export const MenuPage = () => {
     const [shopCarFood, setShopCarFood] = useRecoilState(shopCarFoodState);
     const [shopCarpPrice, setShopCarPrice] = useRecoilState(shopCarPriceState);
     const [shopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
-    const [isShopCarItem, setShowShopCarItem] = useRecoilState(showShopCarItemState);
     return (
         <>
             <RecoilRoot>
@@ -240,7 +239,6 @@ export const MenuPage = () => {
                                                             setShopCarFood(orderGun.food);
                                                             setShopCarPrice(orderGun.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderGun.price)
-                                                            setShowShopCarItem(true)
                                                         }}
                                                     >
                                                         加入購物車
@@ -290,7 +288,6 @@ export const MenuPage = () => {
                                                             setShopCarFood(orderConvenient.food);
                                                             setShopCarPrice(orderConvenient.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderConvenient.price)
-                                                            setShowShopCarItem(true)
                                                         }}
                                                     >
                                                         加入購物車
@@ -340,7 +337,6 @@ export const MenuPage = () => {
                                                             setShopCarFood(orderDish.food);
                                                             setShopCarPrice(orderDish.price);
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderDish.price)
-                                                            setShowShopCarItem(true)
                                                         }}
                                                     >
                                                         加入購物車
@@ -390,7 +386,6 @@ export const MenuPage = () => {
                                                             setShopCarFood(orderOther.food);
                                                             setShopCarPrice(orderOther.price)
                                                             setShopCarPriceTotal(shopCarPriceTotal + orderOther.price)
-                                                            setShowShopCarItem(true)
                                                         }}
                                                     >
                                                         加入購物車
