@@ -8,19 +8,11 @@ import {
     MenuItem,
     MenuList,
     Progress,
-    Select,
-    Tab,
     Table,
     TableCaption,
     TableContainer,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
     Tbody,
-    Td,
     Text,
-    Tfoot,
     Th,
     Thead,
     Tr,
@@ -29,8 +21,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { NavBar } from "../components/NavBar";
-import { ShopCarItem } from "../components/ShopCarItem";
-import { Test } from "../components/test";
 import {
     shopCarFoodState,
     shopCarItemStackState,
