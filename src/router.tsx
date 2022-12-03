@@ -7,6 +7,7 @@ import { MenuPage } from "./pages/MenuPage";
 import { HistoryPage } from "./pages/HistoryPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
 import { RegisterPage } from "./pages/RegisterPage";
+import './i18n'
 
 export const useRouter = () => {
   return createBrowserRouter([
