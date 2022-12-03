@@ -274,7 +274,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
@@ -323,7 +323,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
@@ -372,7 +372,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
@@ -421,7 +421,7 @@ export const MenuPage = () => {
                                                                 description:
                                                                     "We've added your meals to shop car.",
                                                                 status: "success",
-                                                                duration: 9000,
+                                                                duration: 1000,
                                                                 isClosable: true,
                                                             });
                                                             setOrderCount(orderCount + 1);
