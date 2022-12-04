@@ -23,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { NavBar } from "../components/NavBar";
 import {
+    shopCarCountState,
     shopCarItemStackState,
     shopCarPriceTotalState,
 } from "../Store/MainStore";
@@ -35,6 +36,7 @@ export const CheckoutPage = () => {
     const [ShopCarPriceTotal, setShopCarPriceTotal] = useRecoilState(shopCarPriceTotalState);
     const [shopCarItems, setShopCarItems] = useRecoilState(shopCarItemStackState);
     const [Payment, setPayment] = useState<string>("付款方式");
+    const [orderCount, setOrderCount] = useRecoilState(shopCarCountState);
     return (
         <>
             <NavBar />
@@ -45,14 +47,25 @@ export const CheckoutPage = () => {
                         <Table variant="simple">
                             <TableCaption>
                             <Button
+                            ml="auto"
+                            mr={9}
+                            my={2}
+                            bg="black"
+                            textColor="white"
+                            onClick={()=>{
+                                navigate("/Menu");
+                            }}
+                            >返回購物清單</Button>
+                            <Button
                                 ml="auto"
                                 mr={9}
                                 my={2}
                                 bg="tomato"
                                 textColor="white"
                                 onClick={() => {
-                                    setShopCarFood('')
+                                    setShopCarItems([])
                                     setShopCarPriceTotal(0)
+                                    setOrderCount(0)
                                     toast({
                                         title: " 已清除購物車",
                                         description:
@@ -107,7 +120,7 @@ export const CheckoutPage = () => {
                                             <Text></Text>
                                         </Th>
                                         <Th>
-                                            <Text fontSize="2xl">總金額：NT${ShopCarPriceTotal}</Text>
+                                            <br/><Text fontSize="2xl">總金額：NT${ShopCarPriceTotal}</Text>
                                         </Th>
                                     </Tr>
                                 </>
@@ -191,13 +204,7 @@ export const CheckoutPage = () => {
                 {Checkcompleted == '完成訂單' && (
                     <div>
                         <Text fontSize="4xl">完成訂單</Text>
-                        {/* <div><MealList Order={Orderlist} /></div>暫時這樣用 */}
-                        <div>
-                            <Text fontSize="2xl">
-                                {Payment}:{ShopCarPriceTotal}
-                            </Text>
-                        </div>
-
+                        <Text fontSize="2xl">總金額：NT${ShopCarPriceTotal}</Text>
                         <br />
                         <Button
                             className=" left-2 "
