@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Heading } from "@chakra-ui/react";
+import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
@@ -12,11 +12,36 @@ export const HistoryPage = () => {
 
     return (
         <>
-            <div className=" text-lg " style={{ backgroundImage: `url(https://topeat.tw/images/bg-bottom.webp)`, height: 700, backgroundSize: 'cover' }} >
+            <Box bgImage='https://topeat.tw/images/bg-bottom.webp' >
                 <div><NavBar /></div>
-                <NoticeBoard notices={shopCarItems} />
-                <Heading size='lg'>總金額：NT${ShopCarPriceTotal}</Heading>
-            </div>
+                <Accordion>
+                    <AccordionItem>
+                        <h2>
+                            <AccordionButton>
+                                <Box flex='1' textAlign='left'>
+                                    訂單
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                        </h2>
+                        <AccordionPanel pb={4}>
+                            {
+                                shopCarItems.map((shopCarItem) => {
+                                    return (
+                                        <>
+                                            <Text fontSize='2xl'>{shopCarItem.food}</Text>
+                                            <Text fontSize='2xl' color='red.400'>NT$: {shopCarItem.price}  元</Text>
+                                            <br />
+                                        </>
+                                    )
+                                })
+                            }
+                            <Heading size='lg' color='red.500'>總金額：NT${ShopCarPriceTotal}</Heading>
+                        </AccordionPanel>
+                    </AccordionItem>
+                </Accordion>
+
+            </Box>
             <Footer />
         </>
     )
