@@ -183,14 +183,14 @@ export const MenuPage = () => {
                             <Tab>
                                 <Heading size="md">其他</Heading>
                             </Tab>
-                            {/*<Button
+                            <Button
                                 ml="auto"
                                 mr={9}
                                 my={2}
                                 bg="tomato"
                                 textColor="white"
                                 onClick={() => {
-                                    setShopCarFood('')
+                                    setShopCarItems([])
                                     setShopCarPriceTotal(0)
                                     setOrderCount(0)
                                     toast({
@@ -205,12 +205,12 @@ export const MenuPage = () => {
                                 }}
                             >
                                 清除購物車({orderCount})
-                            </Button>*/}
+                            </Button>
                             <Button
                                 ml="auto"
                                 mr={9}
                                 my={2}
-                                bg="tomato"
+                                bg="blue"
                                 textColor="white"
                                 onClick={() => {
                                     nevigate("/checkout");
