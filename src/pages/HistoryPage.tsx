@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Heading } from "@chakra-ui/react";
+import { Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Footer } from "../components/footer";
@@ -12,7 +12,7 @@ export const HistoryPage = () => {
 
     return (
         <>
-            <div className=" text-lg " style={{ backgroundImage: `url(https://topeat.tw/images/bg-bottom.webp)`, height: 700, backgroundSize: 'cover' }} >
+            <Box bgImage='https://topeat.tw/images/bg-bottom.webp' >
                 <div><NavBar /></div>
                 <Accordion>
                     <AccordionItem>
@@ -29,18 +29,19 @@ export const HistoryPage = () => {
                                 shopCarItems.map((shopCarItem) => {
                                     return (
                                         <>
-                                            {shopCarItem.food}<div className=" text-red-600">NT$: {shopCarItem.price}  元</div>
+                                            <Text fontSize='2xl'>{shopCarItem.food}</Text>
+                                            <Text fontSize='2xl' color='red.400'>NT$: {shopCarItem.price}  元</Text>
                                             <br />
                                         </>
                                     )
                                 })
                             }
-                            <Heading size='lg' className=" text-red-600">總金額：NT${ShopCarPriceTotal}</Heading>
+                            <Heading size='lg' color='red.500'>總金額：NT${ShopCarPriceTotal}</Heading>
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
 
-            </div>
+            </Box>
             <Footer />
         </>
     )
